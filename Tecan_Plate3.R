@@ -11,9 +11,9 @@ x = as.matrix(read.csv(well.id.file, header = F, strip.white = T))
 ids = x[2,]
 
 #Import Tecan Data
-tecan.file = "2018-05-21_18-46_180521_Adam_Mia_4_96_T7.txt"
+tecan.file = "2018-05-17_03-56_180508_Adam_Mia_Tecan_3_96_T14.txt"
 x = read.csv(tecan.file, skip = 19)
-x = x[1:(nrow(x) - 2), ]
+x = x[1:(nrow(x) - 4), ]
 
 #Matix of ODs
 od = as.matrix(x[,3:ncol(x)])
@@ -60,7 +60,7 @@ condition = c("cog8_sap30_P", "cog8_neg_P", "reb1_sap30_P", "reb1_neg_P", "ret2_
 #plot
 
 #General
-pdf(file = "P4_Rep.pdf", width = 14, height = 14)
+pdf(file = "P3_Rep.pdf", width = 14, height = 14)
 par(mfrow = c(4,4))
 for(j in 1:length(condition)){
   x = eval(parse(text = condition[j])) 
@@ -72,7 +72,7 @@ for(j in 1:length(condition)){
 dev.off()
 
 #+ATC vs -ATC
-pdf(file = "P4_ATC.pdf", width = 16, height = 8)
+pdf(file = "P3_ATC.pdf", width = 16, height = 8)
 par(mfrow = c(2,4))
 for(j in 1:(length(condition)/2)){
   x = eval(parse(text = condition[j])) 
@@ -91,7 +91,7 @@ dev.off()
 
 
 #+/-SAP30
-pdf(file = "P4_SAP30.pdf", width = 16, height = 8)
+pdf(file = "P3_SAP30.pdf", width = 16, height = 8)
 par(mfrow = c(2,4))
 for(j in (1:8)*2 -1){
   x = eval(parse(text = condition[j])) 
