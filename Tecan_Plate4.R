@@ -36,15 +36,15 @@ for(i in 1:ncol(od)){
 }
 
 #Compare 
-cog8_sap30_P = c(1:3, 25:27)
-cog8_neg_P = c(4:6, 28:30)
-reb1_sap30_P = c(7:9, 31:33)
-reb1_neg_P = c(10:12, 34:36)
-ret2_sap30_P = c(13:15, 37:39)
-ret2_neg_P = c(16:18, 40:42)
+cog8_sap30_P = c(1:2, 49:50)
+cog8_neg_P = c(4:6, 52:54)
+reb1_sap30_P = c(7:9, 55:57)
+reb1_neg_P = c(10:12, 58:60)
+ret2_sap30_P = c(13:15, 61:63)
+ret2_neg_P = c(16:18, 64:66)
 neg_sap30_P = cog8_sap30_P + 18
 neg_neg_P = cog8_sap30_P + 21
-cog8_sap30_N = c(49:51, 73:75)
+cog8_sap30_N = c(25:26, 73:74)
 cog8_neg_N = cog8_sap30_N + 3
 reb1_sap30_N = cog8_sap30_N + 6
 reb1_neg_N = cog8_sap30_N + 9
@@ -52,6 +52,7 @@ ret2_sap30_N = cog8_sap30_N + 12
 ret2_neg_N = cog8_sap30_N + 15
 neg_sap30_N = cog8_sap30_N + 18
 neg_neg_N = cog8_sap30_N + 21
+
 
 condition = c("cog8_sap30_P", "cog8_neg_P", "reb1_sap30_P", "reb1_neg_P", "ret2_sap30_P", "ret2_neg_P", "neg_sap30_P", "neg_neg_P", "cog8_sap30_N", "cog8_neg_N", "reb1_sap30_N", "reb1_neg_N", "ret2_sap30_N", "ret2_neg_N", "neg_sap30_N", "neg_neg_N" )
 
@@ -107,6 +108,4 @@ for(j in (1:8)*2 -1){
   text(400, 0.55, labels = condition[j+1], col = "red")
 }
 dev.off()
-
-
 
