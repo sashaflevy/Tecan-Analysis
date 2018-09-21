@@ -29,10 +29,18 @@ for(i in 1:length(x)){
 }
 names(delta_ct) = y
 z = delta_ct[1:96]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 
 #CAUTION: control_control and control_SAP30 use different primers
 
+<<<<<<< HEAD
+=======
+#CAUTION: control_control and control_SAP30 use different primers
+
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 mean_delta_ct = 1:16
 names(mean_delta_ct) = c(paste(x, "+ATC", sep = ""), paste(x, "-ATC", sep = ""))
 for(i in 1:length(mean_delta_ct)){
@@ -68,7 +76,11 @@ cc_ret = delta_ct[70]
 
 pdf(file = "SAP30 effect in ATC.pdf")
 mean_matrix = matrix(NA, 2, 3)
+<<<<<<< HEAD
 colnames(mean_matrix) = c("RET2", "REB1", "COG1")
+=======
+colnames(mean_matrix) = c("RET2", "REB1", "COG8")
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 rownames(mean_matrix) = c("-SAP30","+SAP30")
 sem_matrix = mean_matrix
 
@@ -84,16 +96,26 @@ mean_matrix[2,2] = mean(mean(n) - p + 1)
 mean_matrix[1,2] = mean(mean(n) - n + 1)
 sem_matrix[2,2] = sd(mean(n) - p + 1)/sqrt(6)
 sem_matrix[1,2] = sd(mean(n) - n + 1)/sqrt(6)
+<<<<<<< HEAD
 n = delta_ct[which(names(delta_ct) == 'COG1_control+ATC')]
 p = delta_ct[which(names(delta_ct) == 'COG1_SAP30+ATC')]
+=======
+n = delta_ct[which(names(delta_ct) == 'COG8_control+ATC')]
+p = delta_ct[which(names(delta_ct) == 'COG8_SAP30+ATC')]
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 mean_matrix[2,3] = mean(mean(n) - p + 1)
 mean_matrix[1,3] = mean(mean(n) - n + 1)
 sem_matrix[2,3] = sd(mean(n) - p + 1)/sqrt(6)
 sem_matrix[1,3] = sd(mean(n) - n + 1)/sqrt(6)
 
 x = barplot(mean_matrix, main="with ATC",
+<<<<<<< HEAD
             ylab="Relative expression", col=c("white","grey"),
             legend = rownames(mean_matrix), beside=TRUE, ylim = c(0,2.5))
+=======
+        ylab="Relative expression", col=c("white","grey"),
+        legend = rownames(mean_matrix), beside=TRUE, ylim = c(0,2.5))
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 segments(x, mean_matrix - sem_matrix, x,
          mean_matrix + sem_matrix, lwd = 1.5)
 arrows(x, mean_matrix - sem_matrix, x,
@@ -106,7 +128,11 @@ dev.off()
 
 pdf(file = "SAP30 effect without ATC.pdf")
 mean_matrix = matrix(NA, 2, 3)
+<<<<<<< HEAD
 colnames(mean_matrix) = c("RET2", "REB1", "COG1")
+=======
+colnames(mean_matrix) = c("RET2", "REB1", "COG8")
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 rownames(mean_matrix) = c("-SAP30","+SAP30")
 sem_matrix = mean_matrix
 
@@ -122,8 +148,13 @@ mean_matrix[2,2] = mean(mean(n) - p + 1)
 mean_matrix[1,2] = mean(mean(n) - n + 1)
 sem_matrix[2,2] = sd(mean(n) - p + 1)/sqrt(6)
 sem_matrix[1,2] = sd(mean(n) - n + 1)/sqrt(6)
+<<<<<<< HEAD
 n = delta_ct[which(names(delta_ct) == 'COG1_control-ATC')]
 p = delta_ct[which(names(delta_ct) == 'COG1_SAP30-ATC')]
+=======
+n = delta_ct[which(names(delta_ct) == 'COG8_control-ATC')]
+p = delta_ct[which(names(delta_ct) == 'COG8_SAP30-ATC')]
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 mean_matrix[2,3] = mean(mean(n) - p + 1)
 mean_matrix[1,3] = mean(mean(n) - n + 1)
 sem_matrix[2,3] = sd(mean(n) - p + 1)/sqrt(6)
@@ -144,7 +175,11 @@ dev.off()
 #Make a barplot comparing +/- ATC (no SAP30)
 pdf(file = "ATC effect without SAP30 guide.pdf")
 mean_matrix = matrix(NA, 2, 3)
+<<<<<<< HEAD
 colnames(mean_matrix) = c("RET2", "REB1", "COG1")
+=======
+colnames(mean_matrix) = c("RET2", "REB1", "COG8")
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 rownames(mean_matrix) = c("+ATC","-ATC")
 sem_matrix = mean_matrix
 
@@ -160,8 +195,13 @@ mean_matrix[2,2] = mean(mean(n) - p + 1)
 mean_matrix[1,2] = mean(mean(n) - n + 1)
 sem_matrix[2,2] = sd(mean(n) - p + 1)/sqrt(6)
 sem_matrix[1,2] = sd(mean(n) - n + 1)/sqrt(6)
+<<<<<<< HEAD
 n = delta_ct[which(names(delta_ct) == 'COG1_control+ATC')]
 p = delta_ct[which(names(delta_ct) == 'COG1_control-ATC')]
+=======
+n = delta_ct[which(names(delta_ct) == 'COG8_control+ATC')]
+p = delta_ct[which(names(delta_ct) == 'COG8_control-ATC')]
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 mean_matrix[2,3] = mean(mean(n) - p + 1)
 mean_matrix[1,3] = mean(mean(n) - n + 1)
 sem_matrix[2,3] = sd(mean(n) - p + 1)/sqrt(6)
@@ -181,7 +221,11 @@ dev.off()
 #Make a barplot comparing +/- ATC (w/ SAP30 guide)
 pdf(file = "ATC effect with SAP30 guide.pdf")
 mean_matrix = matrix(NA, 2, 3)
+<<<<<<< HEAD
 colnames(mean_matrix) = c("RET2", "REB1", "COG1")
+=======
+colnames(mean_matrix) = c("RET2", "REB1", "COG8")
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 rownames(mean_matrix) = c("+ATC","-ATC")
 sem_matrix = mean_matrix
 
@@ -197,8 +241,13 @@ mean_matrix[2,2] = mean(mean(n) - p + 1)
 mean_matrix[1,2] = mean(mean(n) - n + 1)
 sem_matrix[2,2] = sd(mean(n) - p + 1)/sqrt(6)
 sem_matrix[1,2] = sd(mean(n) - n + 1)/sqrt(6)
+<<<<<<< HEAD
 n = delta_ct[which(names(delta_ct) == 'COG1_SAP30+ATC')]
 p = delta_ct[which(names(delta_ct) == 'COG1_SAP30-ATC')]
+=======
+n = delta_ct[which(names(delta_ct) == 'COG8_SAP30+ATC')]
+p = delta_ct[which(names(delta_ct) == 'COG8_SAP30-ATC')]
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
 mean_matrix[2,3] = mean(mean(n) - p + 1)
 mean_matrix[1,3] = mean(mean(n) - n + 1)
 sem_matrix[2,3] = sd(mean(n) - p + 1)/sqrt(6)
@@ -212,4 +261,11 @@ segments(x, mean_matrix - sem_matrix, x,
 arrows(x, mean_matrix - sem_matrix, x,
        mean_matrix + sem_matrix, lwd = 1.5, angle = 90,
        code = 3, length = 0.05)
+<<<<<<< HEAD
 dev.off()
+=======
+dev.off()
+
+
+
+>>>>>>> 63fbb217b04c81d9806231fbde15426d3769bc63
